@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+// import { useHistory } from 'react-router-dom';
 // import useAuth from '../../../Hooks/useAuth';
 // , useHistory
 
@@ -9,24 +11,25 @@ const Register = () => {
 
     // const history = useHistory();
 
-    // const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError} = useAuth();
+ 
 
-    // const handleOnBlur = e => {
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     const newLoginData = { ...loginData };
-    //     newLoginData[field] = value;
-    //     setLoginData(newLoginData);
-    // }
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    }
 
-    // const handleLogin = e => {
-    //     if (loginData.password !== loginData.password2) {
-    //         alert("Your Password didn't match");
-    //         return
-    //     }
-    //     registerUser(loginData.name, loginData.email, loginData.password, history);
-    //     e.preventDefault();
-    // }
+    const handleLogin = e => {
+        if (loginData.password !== loginData.confirmpassword) {
+            alert("Your Password didn't match");
+            return
+        }
+        registerUser(loginData.name, loginData.email, loginData.password, );  // history
+        e.preventDefault();
+    }
 
     return (
         <Container>
@@ -35,15 +38,15 @@ const Register = () => {
                     <Typography variant="h5" gutterBottom>
                         New User? Register Here
                     </Typography>
-                    <form>
-                    {/* {!isLoading && <form onSubmit={handleLogin}> */}
+
+                    { !isLoading && <form onSubmit={handleLogin}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Name"
                             name="name"
                             type="text"
-                            // onBlur={handleOnBlur}
+                            onBlur={handleOnChange}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -51,7 +54,7 @@ const Register = () => {
                             label="Email"
                             name="email"
                             type="email"
-                            // onBlur={handleOnBlur}
+                            onBlur={handleOnChange}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -59,25 +62,24 @@ const Register = () => {
                             label="Password"
                             type="password"
                             name="password"
-                            // onBlur={handleOnBlur}
+                            onBlur={handleOnChange}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="ReType Your Password"
                             type="password"
-                            name="password2"
-                            // onBlur={handleOnBlur}
+                            name="confirmpassword"
+                            onBlur={handleOnChange}
                             variant="standard" />
                         <Button sx={{ width: '75%', mt: 2 }} type="submit" variant="contained">Register</Button>
                         <NavLink style={{ textDecoration: 'none' }} to="/login">
                             <Button variant="text">Already Register? Please Login</Button>
                         </NavLink>
-                    </form>
-                    {/* }
+                    </form>}
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">Your Registration Created Successfully</Alert>}
-                    {authError && <Alert severity="error">{authError}</Alert>} */}
+                    {authError && <Alert severity="error">{authError}</Alert>}}
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img style={{ width: '100%', borderRadius: '10px' }} src="https://i.ibb.co/7C3Fqh0/Registration.jpg" alt="" />

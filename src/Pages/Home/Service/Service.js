@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 
 const Service = (props) => {
@@ -29,7 +30,9 @@ const Service = (props) => {
                     <Typography variant="h5" component="div" >
                         {price}
                     </Typography>
-                    <Box style={{ textDecoration: 'none' }}><Button sx={{ color: 'success.main' }} variant="text">Explore More</Button></Box>
+                    <NavLink style={{ textDecoration: 'none', color: 'red' }} to="/explore">
+                        <Button color="inherit">Explore More</Button>
+                    </NavLink>
                     </Box>
                 </CardContent>
             </Card>

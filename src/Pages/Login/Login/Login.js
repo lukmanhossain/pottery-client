@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
-import { NavLink,  } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 // import useAuth from '../../../Hooks/useAuth';
-// useLocation, useHistory
 
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
 
-    // const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+    const { user, loginUser,  isLoading, authError } = useAuth();
 
-    // const location = useLocation();
-    // const history = useHistory();
+    // signInWithGoogle
+    const location = useLocation();
+    const history = useHistory();
 
 
     const handleOnChange = e => {
@@ -23,10 +24,10 @@ const Login = () => {
         setLoginData(newLoginData);
     }
 
-    // const handleLogin = e => {
-        // loginUser(loginData.email, loginData.password, location, history);
-        // e.preventDefault();
-    // }
+    const handleLogin = e => {
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
+    }
 
     // const handleGoogleSignIn = () => {
         // signInWithGoogle(location, history)
@@ -38,8 +39,7 @@ const Login = () => {
                     <Typography variant="h5" gutterBottom>
                         Login Here
                     </Typography>
-                    {/* onSubmit={handleLogin} */}
-                    <form >
+                    <form onSubmit={handleLogin}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
@@ -59,9 +59,9 @@ const Login = () => {
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button variant="text">New User? Please Register</Button>
                         </NavLink>
-                        {/* {isLoading && <CircularProgress />} */}
-                        {/* {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>} */}
-                        {/* {authError && <Alert severity="error">{authError}</Alert>} */}
+                        {isLoading && <CircularProgress />} 
+                        {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>}
+                        {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
                     <p>--------------- OR --------------</p>
                     {/* onClick={handleGoogleSignIn} */}

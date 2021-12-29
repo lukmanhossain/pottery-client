@@ -1,7 +1,6 @@
 import { Container, Grid } from '@mui/material';
 import React from 'react';
 import Booking from '../Booking/Booking/Booking';
-import Navigation from '../Shared/Navigation/Navigation';
 
 const bookings = [
     {
@@ -149,7 +148,6 @@ const bookings = [
 const Explore = () => {
     return (
         <Container>
-            <Navigation></Navigation>
             <h1 className="text-center text-title mt-3 mb-3 py-4">Our All Pottery Is Here</h1>
             <Grid container spacing={2}>
                 {

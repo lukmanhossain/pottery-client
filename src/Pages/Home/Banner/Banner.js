@@ -19,7 +19,7 @@ const Banner = () => {
             <Typography sx={{ fontSize: "20px", fontFamily: 'Raleway', lineHeight: "20px", pb: 0 }} >
             Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials, which are fired at high temperatures to give them a hard, durable form. Major types include earthenware, stoneware and porcelain.
             </Typography>
-            <Link to="/">
+            <Link to="/explore">
               <div className="custom-btn btn-one">
                 <span>Shop Now</span>
               </div>
