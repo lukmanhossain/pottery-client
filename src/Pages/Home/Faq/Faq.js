@@ -6,9 +6,9 @@ const Faq = () => {
         <div style={{backgroundColor: 'white', marginBottom: '10px'}}>
         <Container>
             <Row>
-                <h2 className="text-center text-title mt-4 mb-4 py-4">Frequently Asked Questions</h2>
+                <h2 className="text-center text-title mt-3 mb-3 py-4">Frequently Asked Questions</h2>
                 <Col xs={12} md={6}>
-                    <div style={{width: '100%', minHeight: '300px', background: `rgba(0, 0, 0, 0.4) url('https://i.ibb.co/1bK1gtB/8.jpg') center center fixed`, backgroundSize: 'cover', backgroundBlendMode: 'darken'}} className="mt-5 mt-md-0 border">
+                    <div style={{width: '100%', minHeight: '300px', background: `rgba(0, 0, 0, 0.4) url('https://i.ibb.co/tKPBkXm/p.jpg') center center fixed`, backgroundSize: 'cover', backgroundBlendMode: 'darken'}} className="mt-5 mt-md-0 border">
                     </div>
                 </Col>
 

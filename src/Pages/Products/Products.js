@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+// , { useState }
 import Grid from '@mui/material/Grid';
 import { Alert, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import BuyNow from '../../BuyNow/BuyNow/BuyNow';
+import BuyNow from '../BuyNow/BuyNow/BuyNow';
 
 const buys = [
     {
@@ -148,19 +149,19 @@ const buys = [
 ]
 
 const Products = () => {
-    const [buySuccess, setBuySuccess] = useState(false);
+    // const [buySuccess, setBuySuccess] = useState(false);
     return (
         <Container>
             <Typography sx={{ fontWeight: 500, m: 3 }} variant="h4" component="div">
                 Popular Products In Store
             </Typography>
-            {buySuccess && <Alert severity="success">Your Order Placed Successfully</Alert>} <br />
+            {/* {buySuccess && <Alert severity="success">Your Order Placed Successfully</Alert>} <br /> */}
             <Grid container spacing={2}>
                 {
                     buys.map(buynow => <BuyNow
                         key={buynow.id}
                         buynow={buynow}
-                        setBuySuccess={setBuySuccess}
+                        // setBuySuccess={setBuySuccess}
                     ></BuyNow>)
                 }
             </Grid>

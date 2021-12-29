@@ -2,7 +2,6 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import Service from '../Service/Service';
 
 
@@ -43,7 +42,7 @@ const services = [
 const Services = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-                            <h2 className="text-center text-title mt-4 mb-4 py-4">New Arrivals Pottery</h2>
+             <h2 className="text-center text-title mt-4 mb-4 py-2">New Arrivals Pottery</h2>
             <Container>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {

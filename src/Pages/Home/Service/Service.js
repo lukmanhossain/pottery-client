@@ -29,7 +29,7 @@ const Service = (props) => {
                     <Typography variant="h5" component="div" >
                         {price}
                     </Typography>
-                    <Box style={{ textDecoration: 'none' }}><Button sx={{ color: 'success.main' }} variant="text">View Details</Button></Box>
+                    <Box style={{ textDecoration: 'none' }}><Button sx={{ color: 'success.main' }} variant="text">Explore More</Button></Box>
                     </Box>
                 </CardContent>
             </Card>

@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
+import { NavLink,  } from 'react-router-dom';
+// import useAuth from '../../../Hooks/useAuth';
+// useLocation, useHistory
+
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
 
-    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+    // const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
-    const location = useLocation();
-    const history = useHistory();
+    // const location = useLocation();
+    // const history = useHistory();
 
 
     const handleOnChange = e => {
@@ -21,14 +23,14 @@ const Login = () => {
         setLoginData(newLoginData);
     }
 
-    const handleLogin = e => {
-        loginUser(loginData.email, loginData.password, location, history);
-        e.preventDefault();
-    }
+    // const handleLogin = e => {
+        // loginUser(loginData.email, loginData.password, location, history);
+        // e.preventDefault();
+    // }
 
-    const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history)
-    }
+    // const handleGoogleSignIn = () => {
+        // signInWithGoogle(location, history)
+    // }
     return (
         <Container>
             <Grid container spacing={2}>
@@ -36,7 +38,8 @@ const Login = () => {
                     <Typography variant="h5" gutterBottom>
                         Login Here
                     </Typography>
-                    <form onSubmit={handleLogin}>
+                    {/* onSubmit={handleLogin} */}
+                    <form >
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
@@ -56,12 +59,13 @@ const Login = () => {
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button variant="text">New User? Please Register</Button>
                         </NavLink>
-                        {isLoading && <CircularProgress />}
-                        {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
+                        {/* {isLoading && <CircularProgress />} */}
+                        {/* {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>} */}
+                        {/* {authError && <Alert severity="error">{authError}</Alert>} */}
                     </form>
                     <p>--------------- OR --------------</p>
-                    <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
+                    {/* onClick={handleGoogleSignIn} */}
+                    <Button variant="contained">Google Sign In</Button>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img style={{ width: '100%' }} src="https://i.ibb.co/7j19CbV/Login.jpg" alt="" />

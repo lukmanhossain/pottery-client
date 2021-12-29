@@ -5,13 +5,18 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+// import Products from './Pages/Products/Products';
 // import Navigation from './Pages/Shared/Navigation/Navigation';
 import NotFound from './Pages/NotFound/NotFound';
+import Explore from './Pages/Explore/Explore';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import Navigation from './Pages/Shared/Navigation/Navigation';
+// import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 // import Services from './Pages/Home/Services/Services';
 // import BuyNow from './Pages/BuyNow/BuyNow/BuyNow';
 // import Login from './Pages/Login/Login/Login';
 // import Register from './Pages/Login/Register/Register';
-// import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 // import Explore from './Pages/Explore/Explore';
 // import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 // import BuyNowModal from './Pages/BuyNow/BuyNowModal/BuyNowModal';
@@ -24,7 +29,8 @@ function App() {
   return (
     <div className="App">
       {/* <AuthProvider> */}
-        <Router>
+        <Router path="/navigation">
+          <Navigation />
           <Switch>
             <Route exact path="/">
               <Home />
@@ -32,15 +38,18 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
+            <Route path="/explore">
+              <Explore />
+            </Route>
             {/* <Route path="/services">
               <Services />
             </Route> */}
-            {/* <Route path="/login">
+            <Route path="/login">
               <Login />
             </Route>
             <Route path="/register">
               <Register />
-            </Route> */}
+            </Route>
             {/* <Route path="/manageorder">
               <ManageAllOrder />
             </Route> */}

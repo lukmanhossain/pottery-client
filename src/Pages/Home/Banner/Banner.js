@@ -13,7 +13,7 @@ const Banner = () => {
             <Typography variant="h6" >
               World Best Quality
             </Typography>
-            <Typography sx={{ fontFamily: 'Poppins', fontWeight: "550", pb: 0 }} variant="h2" >
+            <Typography sx={{ fontFamily: 'Shizuru', fontWeight: "550", pb: 0 }} variant="h2" >
               Pottery Is Here
             </Typography>
             <Typography sx={{ fontSize: "20px", fontFamily: 'Raleway', lineHeight: "20px", pb: 0 }} >
