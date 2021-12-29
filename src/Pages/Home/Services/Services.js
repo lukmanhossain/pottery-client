@@ -7,27 +7,26 @@ import Service from '../Service/Service';
 
 const services = [
     {
-        // img: "https://i.ibb.co/1bK1gtB/8.jpg",
         img: "https://i.ibb.co/x1YWY27/download-2.jpg",
         name: "Banding Wheel",
         price:"$87",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials, which are fired at high temperatures to give them a hard, durable form."
     },
     {
-        img: "https://i.ibb.co/x1YWY27/download-2.jpg",
-        name: "Banding Wheel",
+        img: "https://i.ibb.co/7NjjHB3/download-1.jpg",
+        name: "Vase Pottery",
         price:"$95",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials, which are fired at high temperatures to give them a hard, durable form."
     },
     {
-        img: "https://i.ibb.co/x1YWY27/download-2.jpg",
-        name: "Banding Wheel",
+        img: "https://i.ibb.co/LrBTb9D/download-3.jpg",
+        name: "Flourish Pottery",
         price:"$84",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials, which are fired at high temperatures to give them a hard, durable form."
     },
     {
-        img: "https://i.ibb.co/x1YWY27/download-2.jpg",
-        name: "Banding Wheel",
+        img: "https://i.ibb.co/7NjjHB3/download-1.jpg",
+        name: "Vase Pottery",
         price:"$93",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials, which are fired at high temperatures to give them a hard, durable form."
     },

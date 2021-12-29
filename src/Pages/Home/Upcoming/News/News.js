@@ -13,31 +13,31 @@ const news = [
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."
     },
     {
-        img: "https://i.ibb.co/1bK1gtB/8.jpg",
+        img: "https://i.ibb.co/KFBVgnk/u-2.jpg",
         name: "Fine Glazes",
         price: "$96",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."
     },
     {
-        img: "https://i.ibb.co/1bK1gtB/8.jpg",
+        img: "https://i.ibb.co/zrd6Zch/u-3.jpg",
         name: "Clay Art ",
         price: "$85",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."
     },
     {
-        img: "https://i.ibb.co/1bK1gtB/8.jpg",
+        img: "https://i.ibb.co/BPRMshs/unnamed.jpg",
         name: "Flourish Pottery",
         price: "$98",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."
     },
     {
-        img: "https://i.ibb.co/1bK1gtB/8.jpg",
+        img: "https://i.ibb.co/p3s4r12/images.jpg",
         name: "Clay Works",
         price: "$93",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."
     },
     {
-        img: "https://i.ibb.co/1bK1gtB/8.jpg",
+        img: "https://i.ibb.co/Lk0wsw7/2.jpg",
         name: "Fine Glazy",
         price: "$97",
         description: "Pottery is the process and the products of forming vessels and other objects with clay and other ceramic materials."

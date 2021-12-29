@@ -12,9 +12,7 @@ import Register from './Pages/Login/Register/Register';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import AuthProvider from './contexts/Authprovider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-// import Dashboard from './Pages/DashBoard/Dashboard/Dashboard';
-// import ManageAllOrder from './Pages/DashBoard/ManageAllOrderPage/ManageAllOrder';
-// import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
+import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 
 
 function App() {
@@ -33,21 +31,15 @@ function App() {
             <PrivateRoute path="/explore">
               <Explore />
             </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <DashBoard />
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
             <Route path="/register">
               <Register />
             </Route>
-            {/* <Route path="/manageorder">
-              <ManageAllOrder />
-            </Route> */}
-            {/* <Route path="/manageproducts">
-              <ManageProducts />
-            </Route> */}
-            {/* <PrivateRoute path="/dashboard">
-              <Dashboard />
-            </PrivateRoute> */}
             <Route path="*">
               <NotFound></NotFound>
             </Route>

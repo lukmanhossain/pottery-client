@@ -10,7 +10,7 @@ const Footer = () => {
                         <h4 className='pb-1'>Contact Us:</h4>
                         <h6>122/2 Rajnogor Area, Habiganj, Bangladesh</h6>
                         <h6>Phone Number: 01711111101</h6>
-                        <h6>E-mail: potteryshop@gmail.com</h6>
+                        <h6>E-mail: potteryhouse@gmail.com</h6>
                         <br />
                     </div>
                     <div className="cols">
@@ -28,7 +28,7 @@ const Footer = () => {
                         </div>
                 </div>
                 <footer className="pb-5">
-                    © 2022 Pottery Shop All rights reserved
+                    © 2022 Pottery House All rights reserved
                 </footer>
             </div>
         </div>

@@ -25,7 +25,7 @@ const Navigation = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Pottery Shop
+            Pottery House
           </Typography>
           <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
                 <Button color="inherit">Home</Button>
@@ -33,13 +33,10 @@ const Navigation = () => {
           <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                 <Button color="inherit">Explore</Button>
           </NavLink>
-          {/* <Link to ="/home"><Button color="inherit">Home</Button></Link>
-          <Link to ="/explore"><Button color="inherit">Explore</Button></Link> */}
-          {/* <NavLink to="/login"><Button color="inherit">Login</Button></NavLink> */}
           {
                         user?.email ?
                             <Box>
-                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/">
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">
                                     <Button color="inherit">Dashboard</Button>
                                 </NavLink>
                                 <Button onClick={logOut} color="inherit">LogOut</Button>

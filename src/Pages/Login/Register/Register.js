@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 // import { useHistory } from 'react-router-dom';
 // import useAuth from '../../../Hooks/useAuth';
-// , useHistory
+// 
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
 
-    // const history = useHistory();
+    const history = useHistory();
 
     const { user, registerUser, isLoading, authError} = useAuth();
  
 
-    const handleOnChange = e => {
+    const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
+        console.log(newLoginData);
         setLoginData(newLoginData);
     }
 
@@ -27,7 +28,7 @@ const Register = () => {
             alert("Your Password didn't match");
             return
         }
-        registerUser(loginData.name, loginData.email, loginData.password, );  // history
+        registerUser(loginData.name, loginData.email, loginData.password, history);
         e.preventDefault();
     }
 
@@ -46,7 +47,7 @@ const Register = () => {
                             label="Name"
                             name="name"
                             type="text"
-                            onBlur={handleOnChange}
+                            onBlur={handleOnBlur}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -54,7 +55,7 @@ const Register = () => {
                             label="Email"
                             name="email"
                             type="email"
-                            onBlur={handleOnChange}
+                            onBlur={handleOnBlur}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -62,7 +63,7 @@ const Register = () => {
                             label="Password"
                             type="password"
                             name="password"
-                            onBlur={handleOnChange}
+                            onBlur={handleOnBlur}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -70,7 +71,7 @@ const Register = () => {
                             label="ReType Your Password"
                             type="password"
                             name="confirmpassword"
-                            onBlur={handleOnChange}
+                            onBlur={handleOnBlur}
                             variant="standard" />
                         <Button sx={{ width: '75%', mt: 2 }} type="submit" variant="contained">Register</Button>
                         <NavLink style={{ textDecoration: 'none' }} to="/login">

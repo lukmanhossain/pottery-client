@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -9,6 +9,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import Button from '@mui/material/Button';
+import useAuth from '../../../hooks/useAuth';
 
 const style = {
     position: 'absolute',
@@ -22,13 +23,49 @@ const style = {
     p: 4,
 };
 
-const BookingModdal = ({openBooking, handleBookingClose, booking, }) => {
+const BookingModdal = ({openBooking, handleBookingClose, booking, setBookingSuccess }) => {
     const { name, price, value } = booking;
 
+    const { user } = useAuth();
+
+    const initialData = { name: user.displayName, email: user.email, phone: ''}
+
+    const [bookingInfo, setBookingInfo] = useState(initialData);
+
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = { ...bookingInfo };
+        newInfo[field] = value;
+        setBookingInfo(newInfo);
+    }
+    
+    
     const handleBookingSubmit = e => {
-        alert('Submitting');
-        handleBookingClose();
+
+        const booking = {
+            ...bookingInfo,
+            price,
+            pottery_name: name,
+            // date: date.toLocalDateString()
+        }
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    setBookingSuccess(true);
+                handleBookingClose();
+                }
+            });
         e.preventDefault();
+
     }
 
     return (
@@ -66,8 +103,8 @@ const BookingModdal = ({openBooking, handleBookingClose, booking, }) => {
                             label="Your Name"
                             id="outlined-size-small"
                             name="name"
-                            // onBlur={handleOnBlur}
-                            // defaultValue={user.displayName}
+                            onBlur={handleOnBlur}
+                            defaultValue={user.displayName}
                             size="small"
                         />
                         <TextField
@@ -75,8 +112,8 @@ const BookingModdal = ({openBooking, handleBookingClose, booking, }) => {
                             label="Your Email"
                             id="outlined-size-small"
                             name="email"
-                            // onBlur={handleOnBlur}
-                            // defaultValue={user.email}
+                            onBlur={handleOnBlur}
+                            defaultValue={user.email}
                             size="small"
                         />
                         <TextField
@@ -84,7 +121,7 @@ const BookingModdal = ({openBooking, handleBookingClose, booking, }) => {
                             label="Phone Number"
                             id="outlined-size-small"
                             name="phone"
-                            // onBlur={handleOnBlur}
+                            onBlur={handleOnBlur}
                             size="small"
                         />
                         <TextField
